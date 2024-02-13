@@ -3,7 +3,6 @@ import "./globals.css";
 import "./data-tables-css.css";
 import "./satoshi.css";
 // import { useState, useEffect } from "react";
-import Loader from "@/components/common/Loader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { MantineProvider } from "@mantine/core";
