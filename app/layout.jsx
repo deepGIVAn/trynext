@@ -43,29 +43,25 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true}>
         <MantineProvider>
           <div className="dark:bg-boxdark-2 dark:text-bodydark">
-            {loading ? (
-              <Loader />
-            ) : (
-              <div className="min-h-screen overflow-hidden">
-                <main>
-                  <div className="min-h-screen mx-auto max-w-screen-2xl flex justify-center items-center">
-                    {children}
-                    <ToastContainer
-                      position="top-center"
-                      autoClose={4000}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick
-                      rtl={false}
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover={false}
-                      theme="light"
-                    />
-                  </div>
-                </main>
-              </div>
-            )}
+            <div className="min-h-screen overflow-hidden">
+              <main>
+                <div className="min-h-screen mx-auto max-w-screen-2xl flex justify-center items-center">
+                  {children}
+                  <ToastContainer
+                    position="top-center"
+                    autoClose={4000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover={false}
+                    theme="light"
+                  />
+                </div>
+              </main>
+            </div>
           </div>
         </MantineProvider>
       </body>
