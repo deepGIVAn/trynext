@@ -14,7 +14,7 @@ import { useRouter, usePathname } from "next/navigation";
 import firebase from "firebase/compat/app";
 import firebaseConfig from "@/config/firebaseConfig";
 
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
 export default function RootLayout({ children }) {
   const navigate = useRouter();
@@ -22,21 +22,21 @@ export default function RootLayout({ children }) {
   console.log(isLoggedIn);
   const pathname = usePathname();
 
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
-    if (!isLoggedIn) {
-      (pathname.includes("dashboard") || pathname.includes("e-warranty")) &&
-        navigate.replace("/");
-    }
-    if (isLoggedIn) {
-      ((pathname.includes("create-studio") &&
-        !pathname.includes("dashboard")) ||
-        pathname.includes("auth") ||
-        pathname === "/") &&
-        navigate.replace("/dashboard");
-    }
-  }, [isLoggedIn, navigate, pathname, setLoading]);
+  // const [loading, setLoading] = useState(true);
+  // useEffect(() => {
+  //   setTimeout(() => setLoading(false), 1000);
+  //   if (!isLoggedIn) {
+  //     (pathname.includes("dashboard") || pathname.includes("e-warranty")) &&
+  //       navigate.replace("/");
+  //   }
+  //   if (isLoggedIn) {
+  //     ((pathname.includes("create-studio") &&
+  //       !pathname.includes("dashboard")) ||
+  //       pathname.includes("auth") ||
+  //       pathname === "/") &&
+  //       navigate.replace("/dashboard");
+  //   }
+  // }, [isLoggedIn, navigate, pathname, setLoading]);
 
   return (
     <html lang="en">
